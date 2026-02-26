@@ -18,18 +18,18 @@ unzip -o esignet-i18n-bundle.zip
 #sign-in-button-plugin
 echo "Downloading plugins"
 
-wget --no-check-certificate --no-cache --no-cookies $SIGN_IN_WITH_ESIGNET_PLUGIN_URL -O $plugins_path/temp/sign-in-button-plugin.zip
+# wget --no-check-certificate --no-cache --no-cookies $SIGN_IN_WITH_ESIGNET_PLUGIN_URL -O $plugins_path/temp/sign-in-button-plugin.zip
 
 echo "unzip plugins.."
-cd $plugins_path/temp
-unzip -o sign-in-button-plugin.zip
+# cd $plugins_path/temp
+# unzip -o sign-in-button-plugin.zip
 
 #move the required js file
-mv $plugins_path/temp/sign-in-with-esignet/$plugins_format/index.js $plugins_path/sign-in-button-plugin.js
+# mv $plugins_path/temp/sign-in-with-esignet/$plugins_format/index.js $plugins_path/sign-in-button-plugin.js
 
 # delete temp folder
-cd $plugins_path
-rm -r temp
+# cd $plugins_path
+# rm -r temp
 
 echo "Pre-requisites download completed."
 
