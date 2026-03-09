@@ -96,7 +96,10 @@
     "resend_otp_counter": "Resend OTP in {{min}}:{{sec}}",
     "mobile_placeholder": "Mobile Number: {{mobileNumber}}",
     "email_placeholder": "Email Address: {{emailAddress}}",
-    "mobile_email_placeholder": "Mobile Number: {{mobileNumber}} and Email Address: {{emailAddress}}"
+    "mobile_email_placeholder": "Mobile Number: {{mobileNumber}} and Email Address: {{emailAddress}}",
+    "authentication_success_title": "Success",
+    "authentication_success_msg": "Authentication completed successfully.",
+    "authentication_success_ok": "OK"
   },
   "signInOption": {
     "login_option_heading": "Choose How You Want to Login:",

@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import ErrorIndicator from "../common/ErrorIndicator";
 import InputWithImage from "./InputWithImage";
 import PinInput from "react-pin-input";
+import AuthSuccessModal from "../common/AuthSuccessModal";
 
 export default function OtpVerify({
   param,
@@ -52,6 +53,7 @@ export default function OtpVerify({
   const [otpValue, setOtpValue] = useState("");
   const [otpSentEmail, setOtpSentEmail] = useState("");
   const [otpSentMobile, setOtpSentMobile] = useState("");
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
   let pin = useRef();
 
   const navigate = useNavigate();
@@ -193,14 +195,17 @@ export default function OtpVerify({
       } else {
         setError(null);
 
-        let nonce = openIDConnectService.getNonce();
+        /*let nonce = openIDConnectService.getNonce();
         let state = openIDConnectService.getState();
 
         let params = buildRedirectParams(nonce, state, openIDConnectService.getOAuthDetails(), response.consentAction);
 
         navigate(process.env.PUBLIC_URL + "/consent" + params, {
           replace: true,
-        });
+        });*/
+
+        //alert("Authentification succeed");
+        setShowSuccessModal(true);
       }
     } catch (error) {
       setError({
@@ -214,6 +219,11 @@ export default function OtpVerify({
 
   return (
     <>
+    <AuthSuccessModal
+        show={showSuccessModal}
+        onClose={() => setShowSuccessModal(false)}
+        i18nKeyPrefix={i18nKeyPrefix}
+      />
       <form className="mt-2 space-y-2" onSubmit={handleSubmit}>
         <div className={"space-y-px"}>
           {fields.map((field) => (
